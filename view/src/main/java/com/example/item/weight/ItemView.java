@@ -117,9 +117,11 @@ public class ItemView extends RelativeLayout {
         switch (measureHeightMode) {
             case MeasureSpec.UNSPECIFIED:
                 ScreenUtils.dp2px(getContext(),45);
+                ScreenUtils.setDefaultRootViewSize(getContext(),mRootView);
                 break;
             case MeasureSpec.AT_MOST:
                 ScreenUtils.dp2px(getContext(),45);
+                ScreenUtils.setDefaultRootViewSize(getContext(),mRootView);
                 break;
             case MeasureSpec.EXACTLY:
                 resultHeight = measureHeightSize;
