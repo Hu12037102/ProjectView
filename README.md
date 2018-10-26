@@ -50,8 +50,7 @@ ItemView
         <!--Item选择器样式-->
         <attr name="selector_drawable" format="reference" />
     </declare-styleable>
-   ```
-   ```xml
+
     <declare-styleable name="TitleView">
            <attr name="group_color" format="reference|color" />
            <attr name="back_click_is_finish" format="boolean" />
