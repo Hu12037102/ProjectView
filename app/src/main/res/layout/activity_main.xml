@@ -38,7 +38,8 @@
         app:title_left_icon="@mipmap/ic_go_wallet"
         app:show_top_line="true"
         app:show_bottom_line="true"
-        app:title_text_size="14sp" />
+        app:title_text_size="14sp"
+        app:top_line_margin_left="50dp"/>
 
 
 </LinearLayout>

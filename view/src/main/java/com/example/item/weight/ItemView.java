@@ -58,7 +58,9 @@ public class ItemView extends RelativeLayout {
             mTvLeft.setTextColor(typedArray.getColor(R.styleable.ItemView_title_text_color, mTvLeft.getPaint().getColor()));
             mTvLeft.setCompoundDrawablePadding(typedArray.getDimensionPixelSize(R.styleable.ItemView_title_drawable_padding, 0));
             mTopLine.setVisibility(typedArray.getBoolean(R.styleable.ItemView_show_top_line, false) ? VISIBLE : GONE);
-
+            setLineHeight(mTopLine, typedArray.getDimensionPixelSize(R.styleable.ItemView_top_line_height, ScreenUtils.dp2px(getContext(), 0.5f)));
+            setMargin(mTopLine,typedArray.getDimensionPixelSize(R.styleable.ItemView_top_line_margin_left,0),typedArray.getDimensionPixelSize(R.styleable.ItemView_top_line_margin_top,0),
+                    typedArray.getDimensionPixelSize(R.styleable.ItemView_top_line_margin_right,0),typedArray.getDimensionPixelSize(R.styleable.ItemView_top_line_margin_bottom,0));
             mTvRight.setCompoundDrawablesWithIntrinsicBounds(typedArray.getDrawable(R.styleable.ItemView_content_left_icon),
                     typedArray.getDrawable(R.styleable.ItemView_content_top_icon), typedArray.getDrawable(R.styleable.ItemView_content_right_icon),
                     typedArray.getDrawable(R.styleable.ItemView_content_bottom_icon));
@@ -69,10 +71,30 @@ public class ItemView extends RelativeLayout {
             if (typedArray.getDrawable(R.styleable.ItemView_selector_drawable) != null) {
                 mRootView.setBackgroundDrawable(typedArray.getDrawable(R.styleable.ItemView_selector_drawable));
             }
+            setMargin(mBottomLine,typedArray.getDimensionPixelSize(R.styleable.ItemView_bottom_line_margin_left,0),typedArray.getDimensionPixelSize(R.styleable.ItemView_bottom_line_margin_top,0),
+                    typedArray.getDimensionPixelSize(R.styleable.ItemView_bottom_line_margin_right,0),typedArray.getDimensionPixelSize(R.styleable.ItemView_bottom_line_margin_bottom,0));
             mBottomLine.setVisibility(typedArray.getBoolean(R.styleable.ItemView_show_bottom_line, false) ? VISIBLE : GONE);
+            setLineHeight(mBottomLine, typedArray.getDimensionPixelSize(R.styleable.ItemView_bottom_line_height, ScreenUtils.dp2px(getContext(), 0.5f)));
             typedArray.recycle();
 
         }
+    }
+
+
+    private void setLineHeight(@NonNull View line, int lineHeight) {
+        ViewGroup.LayoutParams lineParams = line.getLayoutParams();
+        lineParams.width = ViewGroup.LayoutParams.MATCH_PARENT;
+        lineParams.height = lineHeight;
+        line.setLayoutParams(lineParams);
+    }
+
+    private void setMargin(@NonNull View view, int leftMargin, int topMargin, int rightMargin, int bottomMargin) {
+        RelativeLayout.LayoutParams layoutParams = (LayoutParams) view.getLayoutParams();
+        layoutParams.leftMargin = leftMargin;
+        layoutParams.topMargin = topMargin;
+        layoutParams.rightMargin = rightMargin;
+        layoutParams.bottomMargin = bottomMargin;
+        view.setLayoutParams(layoutParams);
     }
 
     public void setTitleText(@NonNull String text) {
@@ -117,12 +139,12 @@ public class ItemView extends RelativeLayout {
         int resultHeight = ScreenUtils.dp2px(getContext(), Contast.DEFAULT_VIEW_HEIGHT);
         switch (measureHeightMode) {
             case MeasureSpec.UNSPECIFIED:
-                ScreenUtils.dp2px(getContext(),Contast.DEFAULT_VIEW_HEIGHT);
-                ScreenUtils.setDefaultRootViewSize(getContext(),mRootView);
+                ScreenUtils.dp2px(getContext(), Contast.DEFAULT_VIEW_HEIGHT);
+                ScreenUtils.setDefaultRootViewSize(getContext(), mRootView);
                 break;
             case MeasureSpec.AT_MOST:
-                ScreenUtils.dp2px(getContext(),Contast.DEFAULT_VIEW_HEIGHT);
-                ScreenUtils.setDefaultRootViewSize(getContext(),mRootView);
+                ScreenUtils.dp2px(getContext(), Contast.DEFAULT_VIEW_HEIGHT);
+                ScreenUtils.setDefaultRootViewSize(getContext(), mRootView);
                 break;
             case MeasureSpec.EXACTLY:
                 resultHeight = measureHeightSize;
