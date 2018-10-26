@@ -4,6 +4,18 @@
 ![动画效果](./ProjectViewGif.gif)
 ### 使用方法
 
+
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+
+dependencies {
+	        implementation 'com.github.Hu12037102:ProjectView:1.0.0'
+	}
+
 ```xml
 <declare-styleable name="ItemView">
        <!--Item左标题Left图标-->
