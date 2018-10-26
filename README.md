@@ -1,7 +1,7 @@
 # ProjectView是针对项目中常用到的TitleView和ItemView
 ## 抽成自定义样式，方便大家自己定义，拓展功能强
 ### 效果预览
-![动画效果](./ProjectView.gif)
+![动画效果](./ProjectViewGif.gif)
 ### 使用方法
 ```xml
 <declare-styleable name="ItemView">
