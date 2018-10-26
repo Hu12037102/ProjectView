@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,10 +16,10 @@ import com.example.item.util.ScreenUtils;
 
 public class TitleView extends RelativeLayout {
 
-    private TextView mTvBack;
-    private TextView mTvCenter;
-    private TextView mTvSure;
-    private ViewGroup mViewRoot;
+    public TextView mTvBack;
+    public TextView mTvCenter;
+    public TextView mTvSure;
+    public ViewGroup mViewRoot;
 
     public TitleView(Context context) {
         this(context, null);
