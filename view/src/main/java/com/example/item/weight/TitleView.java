@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.item.Contast;
 import com.example.item.R;
 import com.example.item.util.ScreenUtils;
 
@@ -73,7 +74,7 @@ public class TitleView extends RelativeLayout {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int heightMeasureMode = MeasureSpec.getMode(heightMeasureSpec);
         int heightMeasureSize = MeasureSpec.getSize(heightMeasureSpec);
-        int resultHeightSize = ScreenUtils.dp2px(getContext(), 45);
+        int resultHeightSize = ScreenUtils.dp2px(getContext(), Contast.DEFAULT_VIEW_HEIGHT);
         switch (heightMeasureMode) {
             case MeasureSpec.UNSPECIFIED:
                 ScreenUtils.setDefaultRootViewSize(getContext(),mViewRoot);

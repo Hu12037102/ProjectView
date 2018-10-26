@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.example.item.Contast;
 import com.example.item.R;
 import com.example.item.util.ScreenUtils;
 
@@ -113,14 +114,14 @@ public class ItemView extends RelativeLayout {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
         int measureHeightMode = MeasureSpec.getMode(heightMeasureSpec);
         int measureHeightSize = MeasureSpec.getSize(heightMeasureSpec);
-        int resultHeight = ScreenUtils.dp2px(getContext(), 45);
+        int resultHeight = ScreenUtils.dp2px(getContext(), Contast.DEFAULT_VIEW_HEIGHT);
         switch (measureHeightMode) {
             case MeasureSpec.UNSPECIFIED:
-                ScreenUtils.dp2px(getContext(),45);
+                ScreenUtils.dp2px(getContext(),Contast.DEFAULT_VIEW_HEIGHT);
                 ScreenUtils.setDefaultRootViewSize(getContext(),mRootView);
                 break;
             case MeasureSpec.AT_MOST:
-                ScreenUtils.dp2px(getContext(),45);
+                ScreenUtils.dp2px(getContext(),Contast.DEFAULT_VIEW_HEIGHT);
                 ScreenUtils.setDefaultRootViewSize(getContext(),mRootView);
                 break;
             case MeasureSpec.EXACTLY:
