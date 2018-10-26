@@ -3,7 +3,6 @@
 ### 效果预览
 ![动画效果](./ProjectViewGif.gif)
 ### 使用方法
-ItemView
 
 ```xml
 <declare-styleable name="ItemView">
@@ -82,4 +81,20 @@ ItemView
            <attr name="sure_text_padding_top" format="dimension|reference" />
            <attr name="sure_text_padding_bottom" format="dimension|reference" />
            <attr name="sure_drawable_padding" format="dimension" />
+
+           //点击事件回调
+            public interface OnTitleViewClickListener {
+                   void onBackClick(@NonNull View view);
+
+                   void onSureClick(@NonNull View view);
+               }
+
+               public interface OnBackViewClickListener {
+                   void onBackClick(@NonNull View view);
+               }
+
+               public interface OnSureViewClickListener {
+                   void onSureClick(@NonNull View view);
+               }
+
            ```
