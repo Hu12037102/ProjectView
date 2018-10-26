@@ -3,6 +3,8 @@
 ### 效果预览
 ![动画效果](./ProjectViewGif.gif)
 ### 使用方法
+ItemView
+
 ```xml
 <declare-styleable name="ItemView">
         <!--Item左标题Left图标-->
@@ -49,3 +51,36 @@
         <attr name="selector_drawable" format="reference" />
     </declare-styleable>
    ```
+   ```xml
+    <declare-styleable name="TitleView">
+           <attr name="group_color" format="reference|color" />
+           <attr name="back_click_is_finish" format="boolean" />
+           <attr name="back_text_padding_left" format="dimension|reference" />
+           <attr name="back_text_padding_right" format="dimension|reference" />
+           <attr name="back_text_padding_top" format="dimension|reference" />
+           <attr name="back_text_padding_bottom" format="dimension|reference" />
+
+           <attr name="back_data" format="reference|string" />
+           <attr name="back_left_drawable" format="reference" />
+           <attr name="back_right_drawable" format="reference" />
+           <attr name="back_top_drawable" format="reference" />
+           <attr name="back_bottom_drawable" format="reference" />
+           <attr name="back_text_size" format="dimension" />
+           <attr name="back_text_color" format="color|reference" />
+           <attr name="back_drawable_padding" format="dimension" />
+           <attr name="center_data" format="reference|string" />
+           <attr name="center_text_size" format="dimension" />
+           <attr name="center_text_color" format="color|reference" />
+           <attr name="sure_data" format="string|reference" />
+           <attr name="sure_left_drawable" format="reference" />
+           <attr name="sure_right_drawable" format="reference" />
+           <attr name="sure_top_drawable" format="reference" />
+           <attr name="sure_bottom_drawable" format="reference" />
+           <attr name="sure_text_size" format="dimension" />
+           <attr name="sure_text_color" format="color|reference" />
+           <attr name="sure_text_padding_left" format="dimension|reference" />
+           <attr name="sure_text_padding_right" format="dimension|reference" />
+           <attr name="sure_text_padding_top" format="dimension|reference" />
+           <attr name="sure_text_padding_bottom" format="dimension|reference" />
+           <attr name="sure_drawable_padding" format="dimension" />
+           ```
