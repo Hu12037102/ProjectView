@@ -1,5 +1,6 @@
 package com.example.item.weight;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.NonNull;
@@ -21,6 +22,7 @@ public class TitleView extends RelativeLayout {
     public TextView mTvCenter;
     public TextView mTvSure;
     public ViewGroup mViewRoot;
+    private boolean mBackIsFinish;
 
     public void setOnBackViewClickListener(OnBackViewClickListener onBackViewClickListener) {
         this.onBackViewClickListener = onBackViewClickListener;
@@ -66,6 +68,7 @@ public class TitleView extends RelativeLayout {
         if (typedArray != null && typedArray.getIndexCount() > 0) {
             mViewRoot.setBackgroundColor(typedArray.getColor(R.styleable.TitleView_group_color, ContextCompat.getColor(getContext(), R.color.color00000000)));
             mTvBack.setText(typedArray.getString(R.styleable.TitleView_back_data));
+            mBackIsFinish = typedArray.getBoolean(R.styleable.TitleView_back_click_is_finish, true);
             mTvBack.setCompoundDrawablesWithIntrinsicBounds(typedArray.getDrawable(R.styleable.TitleView_back_left_drawable), typedArray.getDrawable(R.styleable.TitleView_back_top_drawable),
                     typedArray.getDrawable(R.styleable.TitleView_back_right_drawable), typedArray.getDrawable(R.styleable.TitleView_back_bottom_drawable));
             mTvBack.setCompoundDrawablePadding(R.styleable.TitleView_back_drawable_padding);
@@ -99,6 +102,9 @@ public class TitleView extends RelativeLayout {
                 }
                 if (onBackViewClickListener != null) {
                     onBackViewClickListener.onBackClick(v);
+                }
+                if (mBackIsFinish && getContext() instanceof Activity){
+                    ((Activity) getContext()).finish();
                 }
             }
         });
