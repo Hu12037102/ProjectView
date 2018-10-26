@@ -5,6 +5,7 @@
 ### 使用方法
 
 
+```xml
 allprojects {
 		repositories {
 			...
@@ -16,7 +17,6 @@ dependencies {
 	        implementation 'com.github.Hu12037102:ProjectView:1.0.0'
 	}
 
-```xml
 <declare-styleable name="ItemView">
        <!--Item左标题Left图标-->
               <attr name="title_left_icon" format="reference" />
