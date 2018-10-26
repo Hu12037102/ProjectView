@@ -48,10 +48,12 @@
 
     <declare-styleable name="TitleView">
         <attr name="group_color" format="reference|color" />
+        <attr name="back_click_is_finish" format="boolean" />
         <attr name="back_text_padding_left" format="dimension|reference" />
         <attr name="back_text_padding_right" format="dimension|reference" />
         <attr name="back_text_padding_top" format="dimension|reference" />
         <attr name="back_text_padding_bottom" format="dimension|reference" />
+
         <attr name="back_data" format="reference|string" />
         <attr name="back_left_drawable" format="reference" />
         <attr name="back_right_drawable" format="reference" />
@@ -75,5 +77,6 @@
         <attr name="sure_text_padding_top" format="dimension|reference" />
         <attr name="sure_text_padding_bottom" format="dimension|reference" />
         <attr name="sure_drawable_padding" format="dimension" />
+
     </declare-styleable>
 </resources>
