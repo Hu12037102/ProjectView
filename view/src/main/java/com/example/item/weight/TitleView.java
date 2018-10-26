@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,17 +48,21 @@ public class TitleView extends RelativeLayout {
             mTvBack.setCompoundDrawablesWithIntrinsicBounds(typedArray.getDrawable(R.styleable.TitleView_back_left_drawable), typedArray.getDrawable(R.styleable.TitleView_back_top_drawable),
                     typedArray.getDrawable(R.styleable.TitleView_back_right_drawable), typedArray.getDrawable(R.styleable.TitleView_back_bottom_drawable));
             mTvBack.setCompoundDrawablePadding(R.styleable.TitleView_back_drawable_padding);
-            mTvBack.setTextSize(TypedValue.COMPLEX_UNIT_PX,typedArray.getDimensionPixelSize(R.styleable.TitleView_back_text_size, ScreenUtils.dp2px(getContext(), 14)));
+            mTvBack.setPadding(typedArray.getDimensionPixelSize(R.styleable.TitleView_back_text_padding_left,0),typedArray.getDimensionPixelSize(R.styleable.TitleView_back_text_padding_top,0),
+                    typedArray.getDimensionPixelSize(R.styleable.TitleView_back_text_padding_right,0),typedArray.getDimensionPixelSize(R.styleable.TitleView_back_text_padding_bottom,0));
+            mTvBack.setTextSize(TypedValue.COMPLEX_UNIT_PX,typedArray.getDimensionPixelSize(R.styleable.TitleView_back_text_size, (int) mTvBack.getTextSize()));
             mTvBack.setTextColor(typedArray.getColor(R.styleable.TitleView_back_text_color, ContextCompat.getColor(getContext(), R.color.colorFFEFEFEF)));
             mTvCenter.setText(typedArray.getString(R.styleable.TitleView_center_data));
             mTvCenter.setTextColor(typedArray.getColor(R.styleable.TitleView_center_text_color, ContextCompat.getColor(getContext(), R.color.colorFFFFFFFF)));
-            mTvCenter.setTextSize(TypedValue.COMPLEX_UNIT_PX,typedArray.getDimensionPixelSize(R.styleable.TitleView_center_text_size, ScreenUtils.dp2px(getContext(), 14)));
+            mTvCenter.setTextSize(TypedValue.COMPLEX_UNIT_PX,typedArray.getDimensionPixelSize(R.styleable.TitleView_center_text_size, (int) mTvCenter.getTextSize()));
             mTvSure.setText(typedArray.getString(R.styleable.TitleView_center_data));
             mTvSure.setCompoundDrawablesWithIntrinsicBounds(typedArray.getDrawable(R.styleable.TitleView_sure_left_drawable), typedArray.getDrawable(R.styleable.TitleView_sure_top_drawable),
                     typedArray.getDrawable(R.styleable.TitleView_sure_right_drawable), typedArray.getDrawable(R.styleable.TitleView_sure_bottom_drawable));
-            mTvSure.setTextSize(TypedValue.COMPLEX_UNIT_PX,typedArray.getDimension(R.styleable.TitleView_sure_text_size, ScreenUtils.dp2px(getContext(), 14)));
+            mTvSure.setTextSize(TypedValue.COMPLEX_UNIT_PX,typedArray.getDimensionPixelSize(R.styleable.TitleView_sure_text_size, (int) mTvSure.getTextSize()));
             mTvSure.setTextColor(typedArray.getColor(R.styleable.TitleView_sure_text_color, ContextCompat.getColor(getContext(), R.color.colorFFE1E1E1)));
             mTvSure.setCompoundDrawablePadding(R.styleable.TitleView_sure_drawable_padding);
+            mTvSure.setPadding(typedArray.getDimensionPixelSize(R.styleable.TitleView_sure_text_padding_left,0),typedArray.getDimensionPixelSize(R.styleable.TitleView_sure_text_padding_top,0),
+                    typedArray.getDimensionPixelSize(R.styleable.TitleView_sure_text_padding_right,0),typedArray.getDimensionPixelSize(R.styleable.TitleView_sure_text_padding_bottom,0));
             typedArray.recycle();
         }
 

@@ -9,18 +9,22 @@
 
     <com.example.item.weight.TitleView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:background="@color/colorAccent"
-        app:back_data="返回"
-        app:back_text_size="150sp"
+        app:back_data="返回是丢"
+        app:back_text_size="15sp"
         app:back_drawable_padding="5dp"
         app:back_left_drawable="@mipmap/ic_back"
-        app:back_text_color="@color/colorAccent"
+        app:back_text_color="@color/colorPrimary"
+        app:back_text_padding_left="15dp"
+        app:back_text_padding_right="15dp"
         app:center_data="主页面"
         app:center_text_color="@android:color/black"
         app:center_text_size="18sp"
         app:sure_data="确定"
         app:sure_text_size="15sp"
+        app:sure_text_padding_left="15dp"
+        app:sure_text_padding_right="15dp"
         />
 
     <com.example.item.weight.ItemView
@@ -33,6 +37,8 @@
         app:title_data="钱包"
         app:title_drawable_padding="5dp"
         app:title_left_icon="@mipmap/ic_go_wallet"
+        app:show_top_line="true"
+        app:show_bottom_line="true"
         app:title_text_size="14sp" />
 
 

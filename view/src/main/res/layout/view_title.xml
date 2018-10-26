@@ -9,8 +9,8 @@
         android:id="@+id/tv_back"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        tools:text="返回" />
+        android:gravity="center"
+        />
 
     <TextView
         android:id="@+id/tv_center"
@@ -26,7 +26,6 @@
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
         android:gravity="center"
-        tools:text="确定"
 
         />
 </RelativeLayout>
