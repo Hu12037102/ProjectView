@@ -58,6 +58,7 @@ public class ItemView extends RelativeLayout {
             mTvLeft.setTextColor(typedArray.getColor(R.styleable.ItemView_title_text_color, mTvLeft.getPaint().getColor()));
             mTvLeft.setCompoundDrawablePadding(typedArray.getDimensionPixelSize(R.styleable.ItemView_title_drawable_padding, 0));
             mTopLine.setVisibility(typedArray.getBoolean(R.styleable.ItemView_show_top_line, false) ? VISIBLE : GONE);
+            mTopLine.setBackgroundColor(typedArray.getColor(R.styleable.ItemView_top_line_color,ContextCompat.getColor(getContext(),R.color.colorFFEFEFEF)));
             setLineHeight(mTopLine, typedArray.getDimensionPixelSize(R.styleable.ItemView_top_line_height, ScreenUtils.dp2px(getContext(), 0.5f)));
             setMargin(mTopLine,typedArray.getDimensionPixelSize(R.styleable.ItemView_top_line_margin_left,0),typedArray.getDimensionPixelSize(R.styleable.ItemView_top_line_margin_top,0),
                     typedArray.getDimensionPixelSize(R.styleable.ItemView_top_line_margin_right,0),typedArray.getDimensionPixelSize(R.styleable.ItemView_top_line_margin_bottom,0));
@@ -75,6 +76,7 @@ public class ItemView extends RelativeLayout {
                     typedArray.getDimensionPixelSize(R.styleable.ItemView_bottom_line_margin_right,0),typedArray.getDimensionPixelSize(R.styleable.ItemView_bottom_line_margin_bottom,0));
             mBottomLine.setVisibility(typedArray.getBoolean(R.styleable.ItemView_show_bottom_line, false) ? VISIBLE : GONE);
             setLineHeight(mBottomLine, typedArray.getDimensionPixelSize(R.styleable.ItemView_bottom_line_height, ScreenUtils.dp2px(getContext(), 0.5f)));
+            mBottomLine.setBackgroundColor(typedArray.getColor(R.styleable.ItemView_bottom_line_color,ContextCompat.getColor(getContext(),R.color.colorFFEFEFEF)));
             typedArray.recycle();
 
         }
