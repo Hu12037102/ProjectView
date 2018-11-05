@@ -79,7 +79,7 @@ public class TitleView extends RelativeLayout {
             mTvCenter.setText(typedArray.getString(R.styleable.TitleView_center_data));
             mTvCenter.setTextColor(typedArray.getColor(R.styleable.TitleView_center_text_color, ContextCompat.getColor(getContext(), R.color.colorFFFFFFFF)));
             mTvCenter.setTextSize(TypedValue.COMPLEX_UNIT_PX, typedArray.getDimensionPixelSize(R.styleable.TitleView_center_text_size, (int) mTvCenter.getTextSize()));
-            mTvSure.setText(typedArray.getString(R.styleable.TitleView_center_data));
+            mTvSure.setText(typedArray.getString(R.styleable.TitleView_sure_data));
             mTvSure.setCompoundDrawablesWithIntrinsicBounds(typedArray.getDrawable(R.styleable.TitleView_sure_left_drawable), typedArray.getDrawable(R.styleable.TitleView_sure_top_drawable),
                     typedArray.getDrawable(R.styleable.TitleView_sure_right_drawable), typedArray.getDrawable(R.styleable.TitleView_sure_bottom_drawable));
             mTvSure.setTextSize(TypedValue.COMPLEX_UNIT_PX, typedArray.getDimensionPixelSize(R.styleable.TitleView_sure_text_size, (int) mTvSure.getTextSize()));
